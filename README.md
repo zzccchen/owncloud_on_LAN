@@ -90,7 +90,7 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    在 "0 => 'localhost'," 后面插入 "1 => '虚拟机 ip'," ctrl+s 保存 ctrl+x 退出, 刷新浏览器页面即可
 
-4. 可以使用 `wget` 下载 `.bash` 配置文件, 或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
+4. [性能优化, 可选] 可以使用 `wget` 下载 `.bash` 配置文件, 或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
    
    ```bash
    wget https://github.com/zzccchen/owncloud_on_LAN/blob/main/owncloud_server10_opt.bash
