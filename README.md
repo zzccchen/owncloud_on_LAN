@@ -66,7 +66,7 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 1. 使用 ssh 连接至 Ubuntu 系统, 可以使用 `wget` 下载 `.bash` 配置文件:
    
    ```bash
-   wget https://raw.githubusercontent.com/linuxsyr/owncloud/main/owncloud.bash
+   wget https://github.com/zzccchen/owncloud_on_LAN/blob/main/owncloud_server10.bash
    ```
 
    或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
@@ -74,7 +74,7 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 2. 授予 `.bash` 配置文件可执行权限, 并执行:
    
    ```bash
-   chmod +x owncloud.bash
+   sudo chmod +x owncloud.bash
    sudo bash ./owncloud.bash
    ```
 
