@@ -29,9 +29,35 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    建议更新完后重启虚拟机
 
-2. [配置 SSH] 
+2. [配置 ssh] 打开虚拟机, 在桌面右键打开 `终端`, 输入:
 
-3. [配置 Windows Terminal] 
+   ```bash
+   sudo apt install openssh-server -y
+   ```
+
+3. [获取虚拟机 ip] 在 `终端` 内输入:
+
+   ```bash
+   hostname -I
+   ```
+
+4. [配置 Windows Terminal] 在 Microsoft Store 内安装 `Windows Terminal`, 也可以使用其他 ssh 客户端
+
+   在 `设置` 选项卡中点击左下角 `打开 JSON 文件`, 在 "profiles" -> "list" 中添加如下内容:
+
+   ```json
+            {
+                "commandline": "ssh usr@192.168.1.123",
+                "guid": "{1caa0dad-35be-5f56-a8ff-afceeeaa6121}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu22b"
+            },
+   ```
+
+   将 "commandline" 中 `usr` 换成 Ubuntu 系统用户名, `192.168.1.123` 换成虚拟机 ip
+   
+   将 "guid" 替换成新生成 guid, [生成地址](https://www.iamwawa.cn/guid.html)
 
 ## owncloud server 部署
 
