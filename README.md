@@ -82,6 +82,26 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
    sudo bash ./owncloud_server10.bash
    ```
 
+3. 在浏览器中输入虚拟机 ip, 若提示 "You are accessing the server through an untrusted domain.", 执行:
+   
+   ```bash
+   sudo nano /var/www/owncloud/config/config.php
+   ```
+
+   在 "0 => 'localhost'," 后面插入 "1 => '虚拟机 ip'," ctrl+s 保存 ctrl+x 退出, 刷新浏览器页面即可
+
+4. 可以使用 `wget` 下载 `.bash` 配置文件, 或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
+   
+   ```bash
+   wget https://github.com/zzccchen/owncloud_on_LAN/blob/main/owncloud_server10_opt.bash
+   sudo bash ./owncloud_server10_opt.bash
+   sudo crontab -u www-data -e
+   ```
+
+   将 `*/15  *  *  *  * /usr/bin/php7.4 -f /var/www/owncloud/occ system:cron` 粘贴至最后一行
+
+   在 owncloud 网页端 `设置` -> `常规` -> `管理` 选择 `计划任务 Cron`
+
 ## owncloud Infinite Scale 部署 [(based on Binary Packages)](https://download.owncloud.com/ocis/ocis/stable/3.0.0/)
 
 0. 默认用户名为 `root`, 默认密码为 `zzccchen1234`, 在下面 `.bash` 配置文件中搜索修改
