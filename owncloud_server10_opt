@@ -20,3 +20,4 @@ sed -i "/'installed' => true,/a\
 
 # Transparent Huge Pages
 sudo echo never > sudo /sys/kernel/mm/transparent_hugepage/enabled
+systemctl restart apache2
