@@ -61,7 +61,7 @@ eof
 
 # Start owncloud
 cd /var/www/owncloud
-sudo -u www-data ./occ maintenance:install \
+sudo -u www-data php7.4 occ maintenance:install \
    --database "mysql" \
    --database-name "ownclouddb" \
    --database-user "root"\
