@@ -1,8 +1,10 @@
-# owncloud
+# owncloud on LAN
 
 owncloud server (v10.12.1) / Infinite Scale (v3.0.0) 在局域网 (LAN) 下单服务器部署教程.
 
 Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single server deployment tutorial in local area network (LAN).
+
+非 Docker 部署, Non-Docker deployment
 
 ## 前提说明
 
