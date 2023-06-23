@@ -50,6 +50,7 @@ a2dissite 000-default.conf
 a2enmod rewrite mime unique_id
 apachectl -t
 systemctl restart apache2
+systemctl reload apache2
 
 # mysql setting
 mysql --password=zzccchen1234 --user=root --host=localhost << eof
