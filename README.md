@@ -63,6 +63,8 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
 ## owncloud server 部署
 
+0. 默认用户名为 `root`, 默认密码为 `zzccchen1234`, 在下面 `.bash` 配置文件中搜索修改
+
 1. 使用 ssh 连接至 Ubuntu 系统, 可以使用 `wget` 下载 `.bash` 配置文件:
    
    ```bash
