@@ -102,9 +102,9 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    在 owncloud 网页端 `设置` -> `常规` -> `管理` 选择 `计划任务 Cron`
 
-## owncloud Infinite Scale 部署 [(based on Binary Packages)](https://download.owncloud.com/ocis/ocis/stable/3.0.0/)
+5. 打开网址 "http://虚拟机ip" 开始使用
 
-0. 默认用户名为 `root`, 默认密码为 `zzccchen1234`, 在下面 `.bash` 配置文件中搜索修改
+## owncloud Infinite Scale 部署 [(based on Binary Packages)](https://download.owncloud.com/ocis/ocis/stable/3.0.0/)
 
 1. 使用 ssh 连接至 Ubuntu 系统, 可以使用 `wget` 下载 `.bash` 配置文件:
    
@@ -114,9 +114,48 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
 
-2. 授予 `.bash` 配置文件可执行权限, 并执行:
+2. 修改 `owncloud_ocis3.bash` 中 `OCIS_URL=` 为虚拟机 ip, 端口号 `9200` 不变
+
+3. 授予 `.bash` 配置文件可执行权限, 并执行:
    
    ```bash
    sudo chmod +x owncloud_ocis3.bash
    sudo bash ./owncloud_ocis3.bash
    ```
+
+   提示: "This is not recommended for public instances! [yes | no = default]" 输入 `yes`
+
+   输出的 " user: admin" 和 "password: ^1Qu4^oUopy-pmk+AhFRt24q-P1M+V4Z" 即为默认用户和密码
+
+4. 执行:
+
+   ```bash
+   sudo systemctl edit --force --full ocis.service
+   ```
+
+   粘贴:
+
+   ```bash
+   [Unit]
+   Description=OCIS server
+
+   [Service]
+   Type=simple
+   User=ocis
+   Group=ocis
+   EnvironmentFile=/etc/ocis/ocis.env
+   ExecStart=/usr/local/bin/ocis server
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+   
+   执行:
+
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now ocis
+   ```
+
+5. 打开网址 "https://虚拟机ip:9200" 开始使用
