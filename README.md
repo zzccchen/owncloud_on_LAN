@@ -59,16 +59,23 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
    
    将 "guid" 替换成新生成 guid, [生成地址](https://www.iamwawa.cn/guid.html)
 
+   连接时提示 "Are you sure you want to continue connecting (yes/no/[fingerprint])?" 输入 `yes`
+
 ## owncloud server 部署
 
-1. 使用 ssh 连接至 Ubuntu 系统
+1. 使用 ssh 连接至 Ubuntu 系统, 可以使用 `wget` 下载 `.bash` 配置文件:
+   
+   ```bash
+   wget https://raw.githubusercontent.com/linuxsyr/owncloud/main/owncloud.bash
+   ```
 
-   s
-script to install owncloud on ubuntu 22.04
-download the script:
-wget https://raw.githubusercontent.com/linuxsyr/owncloud/main/owncloud.bash
-chmod +x owncloud.bash 
-sudo bash ./owncloud.bash
-you are done
+   或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
+
+2. 授予 `.bash` 配置文件可执行权限, 并执行:
+   
+   ```bash
+   chmod +x owncloud.bash
+   sudo bash ./owncloud.bash
+   ```
 
 ## owncloud Infinite Scale 部署
