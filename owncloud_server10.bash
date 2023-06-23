@@ -1,21 +1,15 @@
 #!/bin/bash    
 
-showMe    
-echo " Linuxsyr"
-echo "$(tput setaf 2)Thanks for using this script....."
-sleep 1s
-reset
-sleep 1s
-echo "$(tput setaf 2)linuxsyr-youtube....."
-sleep 2s
-reset
-apt-get update  # To get the latest package lists
+apt update  # To get the latest package lists
 apt install apache2 mariadb-server -y
-apt install php7.4 libapache2-mod-php7.4 php7.4-{mysql,intl,curl,json,gd,xml,mbstring,zip} -y
 apt install curl gnupg2 -y
-apt-cache policy php
-add-apt-repository ppa:ondrej/php --yes &> /dev/null
-sudo add-apt-repository ppa:ondrej/php
+
+# sudo add-apt-repository ppa:ondrej/php
+nano /etc/apt/sources.list
+echo "deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy main" >> /etc/apt/sources.list
+echo "#deb-src https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy main " >> /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
+
 apt update
 apt install php7.4
 php7.4 -m
