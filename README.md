@@ -63,7 +63,7 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    连接时提示 "Are you sure you want to continue connecting (yes/no/[fingerprint])?" 输入 `yes`
 
-## owncloud server 部署
+## owncloud server 部署 [(based on Linux Distribution Packages)](https://software.opensuse.org//download.html?project=isv:ownCloud:server:10&package=owncloud-complete-files)
 
 0. 默认用户名为 `root`, 默认密码为 `zzccchen1234`, 在下面 `.bash` 配置文件中搜索修改
 
@@ -78,8 +78,25 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 2. 授予 `.bash` 配置文件可执行权限, 并执行:
    
    ```bash
-   sudo chmod +x owncloud.bash
-   sudo bash ./owncloud.bash
+   sudo chmod +x owncloud_server10.bash
+   sudo bash ./owncloud_server10.bash
    ```
 
-## owncloud Infinite Scale 部署
+## owncloud Infinite Scale 部署 [(based on Binary Packages)](https://download.owncloud.com/ocis/ocis/stable/3.0.0/)
+
+0. 默认用户名为 `root`, 默认密码为 `zzccchen1234`, 在下面 `.bash` 配置文件中搜索修改
+
+1. 使用 ssh 连接至 Ubuntu 系统, 可以使用 `wget` 下载 `.bash` 配置文件:
+   
+   ```bash
+   wget https://github.com/zzccchen/owncloud_on_LAN/blob/main/owncloud_ocis3.bash
+   ```
+
+   或 本地创建 `.bash` 配置文件, 并复制粘贴 `.bash` 配置文件内容
+
+2. 授予 `.bash` 配置文件可执行权限, 并执行:
+   
+   ```bash
+   sudo chmod +x owncloud_ocis3.bash
+   sudo bash ./owncloud_ocis3.bash
+   ```
