@@ -29,10 +29,10 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
    建议更新完后重启虚拟机
 
-2. [配置 ssh] 打开虚拟机, 在桌面右键打开 `终端`, 输入:
+2. [配置 ssh 和 vim] 打开虚拟机, 在桌面右键打开 `终端`, 输入:
 
    ```bash
-   sudo apt install openssh-server -y
+   sudo apt install openssh-server vim -y
    ```
 
 3. [获取虚拟机 ip] 在 `终端` 内输入:
@@ -61,6 +61,9 @@ Owncloud server version (v10.12.1) / Infinite Scale version (v3.0.0) single serv
 
 ## owncloud server 部署
 
+1. 使用 ssh 连接至 Ubuntu 系统
+
+   s
 script to install owncloud on ubuntu 22.04
 download the script:
 wget https://raw.githubusercontent.com/linuxsyr/owncloud/main/owncloud.bash
